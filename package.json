@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "com.v4ex.Search",
+  "version": "1.0.0-alpha",
+  "description": "V4EX Search",
+  "repository": "github:v4ex/com.v4ex.Search",
+  "author": "V4EX Inc. <com.v4ex.Search@v4ex.com> (https://v4ex.com/)",
+  "contributors": [
+    "Xuwei Li <com.v4ex.Search@xuwei.li> (https://xuwei.li/)"
+  ],
+  "license": "V4EX-1.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "export": "[ -s $(pwd)/out/functions ] && rm $(pwd)/out/functions || next build && next export && ln -s $(pwd)/functions $(pwd)/out",
+    "lint": "next lint",
+    "pages": "wrangler pages dev ./out -k SEARCH_RESULTS",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "randomstring": "^1.2.2",
+    "wrangler": "^0.0.13"
+  }
+}

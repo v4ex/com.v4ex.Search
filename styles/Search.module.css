@@ -1,0 +1,50 @@
+/* Copyright (c) 2022, V4EX Inc. All rights reserved. */
+
+/*
+Summary
+-------
+1. Provide Cascading Style Sheets for Result module scope.
+*/
+
+
+.container {
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px solid gray;
+  align-items: center;
+}
+
+.header .logo {
+
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.result {
+}
+
+.result h3 a {
+  color: blue;
+  text-decoration: none;
+}
+
+.result h3 sub {
+  color: gray;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  word-wrap: break-word;
+}
+
+.footer {
+
+}
+
+.footer .logo {
+  float: right;
+}

@@ -1,0 +1,20 @@
+/* Copyright (c) 2022, V4EX Inc. All rights reserved. */
+
+/*
+Summary
+-------
+1. Provide Cascading Style Sheets for Pagination module scope.
+*/
+
+
+.pagination {
+}
+
+.pagination-item {
+  padding: 0.25rem;
+}
+
+.pagination-item a {
+  color: blue;
+  text-decoration: underline;
+}

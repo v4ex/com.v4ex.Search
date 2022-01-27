@@ -1,0 +1,75 @@
+/* Copyright (c) 2022, V4EX Inc. All rights reserved. */
+
+/*
+Summary
+-------
+1. Provide Cascading Style Sheets for SearchBox module scope.
+*/
+
+
+.search-box {
+  width: 100%;
+}
+
+.search-form {
+}
+
+.search-control {
+  display: flex;
+  border: 1px solid gray;
+  height: 2.8rem;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.search-control:focus {
+  box-shadow: 1px 1px 5px grey;
+}
+.search-control:hover {
+  box-shadow: 1px 1px 5px grey;
+}
+
+.search-icon {
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-input {
+    font-size: 1rem;
+  }
+}
+
+.search-clear {
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.search-submit {
+  float: right;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin: 1rem 0.3rem;
+  padding: 0 1rem;
+  line-height: 2.5rem;
+  height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  min-width: 20%;
+}
+
+.search-submit:hover {
+  box-shadow: 1px 1px 5px grey;
+}
