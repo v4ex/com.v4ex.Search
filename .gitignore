@@ -11,6 +11,7 @@
 .pnp.js
 
 # develop
+/.mf
 /dev/
 
 # testing

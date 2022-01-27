@@ -22,9 +22,6 @@ export default class SearchBox extends React.Component {
     this.state = {
       searchInput: props.input
     }
-    // if (props.input) {
-    //   this.needRefresh = true
-    // }
 
     this.handleSearchInput = this.handleSearchInput.bind(this)
     this.handleSearchClear = this.handleSearchClear.bind(this)
@@ -46,12 +43,7 @@ export default class SearchBox extends React.Component {
   handleSearchSubmit(event) {
     event.preventDefault()
     
-    const query = encodeURIComponent(this.state.searchInput)
-    // if (this.needRefresh) {
-    //   window.location = '/search?q=' + query
-    // } else {
-    //   Router.push('/search?q=' + query)
-    // }
+    const query = encodeURIComponent(this.state.searchInput ?? 'V4EX')
     Router.push('/search?q=' + query)
   }
   
