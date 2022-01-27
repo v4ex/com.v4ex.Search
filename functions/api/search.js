@@ -11,15 +11,14 @@
 
 
 export async function onRequest({ env, request }) {
-  const init = {
-    status: 200
-  }
+  const { SEARCH_RESULTS } = env
+
   const params = new URL(request.url).searchParams
   const page = parseInt(params.get('p') ?? 1) // Page number
   const query = params.get('q') ?? 'V4EX' // Search query
 
-  let rawResults = await env.SEARCH_RESULTS.get(query, {type: 'json'})
-  rawResults = rawResults || []
+  let rawResults = await SEARCH_RESULTS.get(query, {type: 'json'})
+  rawResults = rawResults ?? []
 
   const start = (page - 1) * 10
   const output = {
@@ -30,7 +29,8 @@ export async function onRequest({ env, request }) {
     }
   }
 
-  console.log(output) // DEBUG
-
+  const init = {
+    status: 200
+  }
   return new Response(JSON.stringify(output), init)
 }
