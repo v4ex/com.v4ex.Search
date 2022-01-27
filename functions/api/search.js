@@ -14,11 +14,9 @@ export async function onRequest({ env, request }) {
   const init = {
     status: 200
   }
-
-  const url = new URL(request.url)
-  const params = url.searchParams
-  const page = params.get('p', 1) // Page number
-  const query = params.get('q', 'v4ex') // Search query
+  const params = new URL(request.url).searchParams
+  const page = parseInt(params.get('p') ?? 1) // Page number
+  const query = params.get('q') ?? 'V4EX' // Search query
 
   let rawResults = await env.SEARCH_RESULTS.get(query, {type: 'json'})
   rawResults = rawResults || []
@@ -27,10 +25,11 @@ export async function onRequest({ env, request }) {
   const output = {
     results: rawResults.slice(start, start + 10),
     page: {
-      amount: Math.ceil(rawResults.length / 10),
+      amount: Math.ceil(rawResults.length / 10) || 1,
       current: page
     }
   }
+
   console.log(output) // DEBUG
 
   return new Response(JSON.stringify(output), init)

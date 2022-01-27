@@ -22,9 +22,9 @@ function Search() {
   const router = useRouter()
   const { p, q } = router.query
 
-  const [query, setQuery] = useState(q)
-  const [page, setPage] = useState(p)
-  const [pageAmount, setpageAmount] = useState(null) // Set in useEffect()
+  const [query, setQuery] = useState(q ?? 'V4EX')
+  const [page, setPage] = useState(p ?? 1)
+  const [pageAmount, setpageAmount] = useState(1) // Set in useEffect()
   const [content, setContent] = useState('')
 
   // For SearchBar props onQueryChange(newQuery)
